@@ -1,0 +1,2 @@
+# rpcproto
+proto for ygrpc
