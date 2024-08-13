@@ -34,7 +34,7 @@ type RpcCmd struct {
 	Sid string `protobuf:"bytes,3,opt,name=Sid,proto3" json:"Sid,omitempty"`
 	// call id
 	CallId string `protobuf:"bytes,4,opt,name=CallId,proto3" json:"CallId,omitempty"`
-	// response code
+	// response code, ref http status code,200=ok,400-599=error
 	Res int32 `protobuf:"varint,5,opt,name=Res,proto3" json:"Res,omitempty"`
 	// command body
 	Body []byte `protobuf:"bytes,6,opt,name=Body,proto3" json:"Body,omitempty"`

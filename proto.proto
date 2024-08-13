@@ -19,7 +19,7 @@ message RpcCmd {
   // call id
   string CallId = 4;
 
-  // response code
+  // response code, ref http status code,200=ok,400-599=error
   int32 Res = 5;
 
   // command body
