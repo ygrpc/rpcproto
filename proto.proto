@@ -1,0 +1,40 @@
+syntax = "proto3";
+package rpcproto;
+
+option go_package = "github.com/ygrpc/rpcproto";
+
+option optimize_for = LITE_RUNTIME;
+
+// 系统中所有的消息交互都以此为包装
+message RpcCmd {
+  // rpc command code
+  int32 Cmd = 1;
+
+  // sequence no
+  int32 SeqNo = 2;
+
+  // session id
+  string Sid = 3;
+
+  // call id
+  string CallId = 4;
+
+  // response code
+  int32 Res = 5;
+
+  // command body
+  bytes Body = 6;
+
+  // optional str parameter,额外的信息,一般不会有,有些特殊命令里面可能用到
+  string ParaStr = 7;
+
+  // optional binary parameter,额外的信息,一般不会有,有些特殊命令里面可能用到
+  bytes ParaBin = 8;
+
+  // optional int64 parameter
+  int64 ParaInt = 9;
+
+  // optional headers,one key followed by one value,Headers[0]=key,Headers[1]=value,Headers[2]=key,Headers[3]=value ...
+  repeated string Headers = 10;
+
+};
